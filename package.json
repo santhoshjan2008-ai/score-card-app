@@ -1,0 +1,35 @@
+{
+  "name": "score-card-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Auditable Tournament Scoring System with strict transaction integrity and dispute-reduction audit trails",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "build": "npm run build --workspace=backend && npm run build --workspace=frontend",
+    "start": "npm run start --workspace=backend",
+    "migrate": "npm run migrate --workspace=backend",
+    "seed": "npm run seed --workspace=backend",
+    "test": "npm run test --workspace=backend && npm run test --workspace=frontend",
+    "test:backend": "npm run test --workspace=backend",
+    "test:frontend": "npm run test --workspace=frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "keywords": [
+    "tournament",
+    "scoring",
+    "audit-trail",
+    "concurrency",
+    "idempotency",
+    "postgresql",
+    "react",
+    "nodejs"
+  ],
+  "author": "Tournament Scoring Architecture Team",
+  "license": "UNLICENSED"
+}
